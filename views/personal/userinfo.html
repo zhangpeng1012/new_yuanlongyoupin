@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> 元隆有品</title>
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../styles/index.css">
+  <link rel="stylesheet" href="../../styles/menu.css">
+	<!-- jquery -->
+   <script src="../../assets/js/jquery-1.12.4.min.js"></script>
+   <script src="../../assets/js/bootstrap.min.js"></script>
+  <style>
+.num-content{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #F0EBE7;
+  padding: 40px 63px ;
+}
+.num-content > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.num-content > div > .num{
+  color:#BC8859;
+  font-size: 34px;
+}
+.num-content > div > .text{
+  color:rgba(37,27,17,.6);
+  font-size: 14px;
+  margin-top: 12px;
+}
+#yaerCharts{
+  width: 100%;
+  height: 300px;
+  margin-top: 25px;
+}
+#timeCharts,#monthCharts,#categoryCharts{
+   width: 100%;
+  height: 300px;
+  margin-top: 49px;
+}
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+    <div class="header">
+      <span>您好，欢迎光临元隆有品商城</span>
+      <a>登录</a>
+      <a style="margin:0 5px">/</a>
+      <a>注册</a>
+    </div>
+    <div class="header-search">
+      <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+      </div>
+      <button type="button" class="btn btn-default">购物车（0）</button>
+    </div>
+    <div class="header-content">
+      <div class="content-left">
+        <a id="menuBtn" >
+          <i class="icon iconfont ">&#xe60d;</i>
+
+          全部商品分类
+          <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+          <ul>
+            <li>
+              <span>电子产品、文娱办公</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+            <li>
+              <span>家居电器</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+          <li>个人信息</li>
+          <li>我的收藏</li>
+          <li>我的订单</li>
+          <li>退出登录</li>
+        </ul>
+      </div>
+    </div>
+    <!-- end -->
+    <div class="page">
+    <div class="page-content">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li>我的账户</li>
+        <li class="active">我的信息</li>
+      </ul>
+      <div class="view-container">
+        <div class="menu">
+          <div class="menu-list">
+            <p class="title">我的账户</p>
+            <ul>
+              <li><a>信息维护</a></li>
+              <li><a>修改密码</a></li>
+              <li class="active"><a>账户信息</a></li>
+              <li><a>收货地址维护</a></li>
+              <li><a>我的收藏</a></li>
+              <li><a>我的订单</a></li>
+            </ul>
+          </div>
+          <div class="tips">
+            <p class="title">投诉热线</p>
+            <span class="content">
+              <p class="name">李士毅</p>
+              <p class="phone"><i class="iconfont icon-phone1x"></i>010-83528822-8615</p>
+            </span>
+          </div>
+        </div>
+        <div class="view">
+          <div class="page">
+            <div class="page-content">
+              <p class="title">账户信息</p>
+              <div class="num-content">
+                <div>
+                  <span class="num">178</span>
+                  <span class="text">同一区域订购者排名</span>
+                </div>
+                <div>
+                  <span class="num">88K</span>
+                  <span class="text">今年花费金额</span>
+                </div>
+                <div>
+                  <span class="num">205</span>
+                  <span class="text">今年登录次数</span>
+                </div>
+                <div>
+                  <span class="num">56</span>
+                  <span class="text">已开会场次</span>
+                </div>
+              </div>
+              <div id="yaerCharts"></div>
+              <div id="timeCharts"></div>
+              <div id="monthCharts"></div>
+              <div id="categoryCharts"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+    <div class="footer-container">
+      <div class="footer-btn-content">
+        <div><img src="./assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="./assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="./assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="./assets/footer_icon_3.png" alt="">投诉建议</div>
+      </div>
+      <div class="footer-tips">
+        <div class="footer-tips-left">
+          <p>北京元隆雅图文化传播股份有限公司</p>
+          <p>电话：010-83528822</p>
+          <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+          <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+          <p>工作时间：9:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+      </div>
+    </div>
+    <!-- end -->
+    <script src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+        drawYear();
+        drawTime();
+        drawMonth();
+        drawCategory();
+    })
+    function drawYear() {
+      // 基于准备好的dom，初始化echarts实例
+      const myChart = echarts.init(document.getElementById('yaerCharts'));
+      // 绘制图表
+      myChart.setOption({
+        title: { text: '今年下单情况' },
+        legend: {
+          data: ['日订单金额', '日订单数量'],
+          left: 0,
+          top: 30,
+          textStyle: {
+            color: 'rgba(37,27,17,.6)'
+          }
+        },
+        tooltip: {},
+        xAxis: {
+          data: ['0101', '0105', '0110', '0115', '0120', '0125'],
+          axisLine: {
+            lineStyle: {
+              color: 'rgba(37,27,17,.6)'
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: [{
+          show: true,
+          name: '日订单金额（元）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }, {
+          type: 'category',
+          show: true,
+          name: '日订单数量（单）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          data: ['1', '1', '1', '1', '1', '1'],
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }],
+        series: [{
+          name: '日订单金额',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20],
+          itemStyle: {
+            color: '#687AE1'
+          }
+        }, {
+          name: '日订单数量',
+          type: 'bar',
+          data: [100, 200, 300, 405, 500, 600],
+          itemStyle: {
+            color: '#687AE1'
+          }
+        }]
+      });
+    }
+    function drawTime() {
+      // 基于准备好的dom，初始化echarts实例
+      const myChart = echarts.init(document.getElementById('timeCharts'));
+      // 绘制图表
+      myChart.setOption({
+        title: { text: '主要下单时间段（16-18点）' },
+        legend: {
+          data: ['分时订单销量', '分时订单数量'],
+          left: 0,
+          top: 30,
+          textStyle: {
+            color: 'rgba(37,27,17,.6)'
+          }
+        },
+        tooltip: {},
+        xAxis: {
+          data: ['0101', '0105', '0110', '0115', '0120', '0125'],
+          axisLine: {
+            lineStyle: {
+              color: 'rgba(37,27,17,.6)'
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: [{
+          show: true,
+          name: '日订单金额（元）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }, {
+          type: 'category',
+          show: true,
+          name: '日订单数量（单）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          data: ['1', '1', '1', '1', '1', '1'],
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }],
+        series: [{
+          name: '分时订单销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20],
+          itemStyle: {
+            color: '#687AE1'
+          }
+        }, {
+          name: '分时订单数量',
+          type: 'line',
+          data: [100, 200, 300, 405, 500, 600],
+          itemStyle: {
+            color: '#2EB37F'
+          }
+        }]
+      });
+    }
+    function drawMonth() {
+      // 基于准备好的dom，初始化echarts实例
+      const myChart = echarts.init(document.getElementById('monthCharts'));
+      // 绘制图表
+      myChart.setOption({
+        title: { text: '月下单情况' },
+        legend: {
+          data: ['月订购订单金额', '月订购订单金额数量'],
+          left: 0,
+          top: 30,
+          textStyle: {
+            color: 'rgba(37,27,17,.6)'
+          }
+        },
+        tooltip: {},
+        xAxis: {
+          data: ['0101', '0105', '0110', '0115', '0120', '0125'],
+          axisLine: {
+            lineStyle: {
+              color: 'rgba(37,27,17,.6)'
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: [{
+          show: true,
+          name: '日订单金额（元）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }, {
+          type: 'category',
+          show: true,
+          name: '日订单数量（单）',
+          nameLocation: 'center',
+          nameGap: 50,
+          nameTextStyle: {
+            color: 'rgba(37,27,17,.6)'
+          },
+          data: ['1', '1', '1', '1', '1', '1'],
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          }
+        }],
+        series: [{
+          name: '月订购订单金额',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20],
+          itemStyle: {
+            color: '#687AE1'
+          }
+        }, {
+          name: '月订购订单金额数量',
+          type: 'line',
+          data: [100, 200, 300, 405, 500, 600],
+          itemStyle: {
+            color: '#2EB37F'
+          }
+        }]
+      });
+    };
+    function drawCategory() {
+      // 基于准备好的dom，初始化echarts实例
+      const myChart = echarts.init(document.getElementById('categoryCharts'));
+      // 绘制图表
+      myChart.setOption({
+        title: {
+          text: '产品主要类别',
+          left: 'left'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+          type: 'scroll',
+          orient: 'vertical',
+          right: 10,
+          bottom: 20,
+          data: ['电子产品、文娱办公', '家居电器', '皮具箱包', '个人护理', '居家健康']
+        },
+        series: [
+          {
+            name: '电子产品、文娱办公',
+            type: 'pie',
+            radius: '50%',
+            center: ['40%', '50%'],
+            data: [{
+              name: '电子产品、文娱办公',
+              value: Math.round(Math.random() * 100000),
+              itemStyle: {
+                color: '#887AE1'
+              }
+            }, {
+              name: '家居电器',
+              value: Math.round(Math.random() * 100000),
+              itemStyle: {
+                color: '#EEB05C'
+              }
+            }, {
+              name: '皮具箱包',
+              value: Math.round(Math.random() * 100000),
+              itemStyle: {
+                color: '#2EB37F'
+              }
+            }, {
+              name: '个人护理',
+              value: Math.round(Math.random() * 100000),
+              itemStyle: {
+                color: '#687AE1'
+              }
+            }, {
+              name: '居家健康',
+              value: Math.round(Math.random() * 100000),
+              itemStyle: {
+                color: '#DF6161'
+              }
+            }]
+          }
+        ]
+      });
+    }
+
+
+</script>
+</body>
+
+</html>

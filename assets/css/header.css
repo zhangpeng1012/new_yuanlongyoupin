@@ -30,26 +30,26 @@
   align-items: center;
   justify-content: space-between;
 }
-.input-group{
+.header-search .input-group{
   padding-left: 250px;
 }
-.input-group input{
+.header-search .input-group input{
   width: 344px!important;
   height: 48px;
   border: 0;
   color: #ffffff;
   background: #251B11;
 }
-input,input:focus{
+.header-search input,.header-search input:focus{
   border: none !important;
   box-shadow: none !important;
 }
-.input-group-addon{
+.header-search .input-group-addon{
   border: 0;
   color: #ffffff;
   background: #251B11;
 }
-.btn-default{
+.header-search .btn-default{
   width: 164px;
   height: 48px;
 }
