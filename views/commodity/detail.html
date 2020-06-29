@@ -112,6 +112,7 @@
 .commodity-detail-content .event-content{
   display: flex;
   align-items: center;
+  margin-top: 44px;
 }
 .commodity-detail-content .event-content > .btn > .iconfont{
   margin-right: 18px;
@@ -149,141 +150,107 @@
 .detail-content{
   background: #FBF9F7;
   padding: 28px 73px;
-  & .content-tabs{
-    background: #ffffff;
-    padding:32px 28px;
-  }
+  overflow: hidden;
+}
+.detail-content .content-tabs{
+  background: #ffffff;
+  padding:32px 28px;
+}
+.detail-content .tabs-title{
+  justify-content: center;
+}
+.detail-content .tabs-title a{
+  position: relative;
+  padding: 0 40px;
+}
+.detail-content .tabs-title a::after{
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: rgba(37, 27, 17, 0.3);
+  position: absolute;
+  right: 0;
+  top:1px;
+}
+.detail-content .tabs-title a:last-child::after{
+  display: none;
+}
+.detail-content .tabs-title .active{
+  color:#BC8859;
+  font-size: 20px !important;
+}
+.detail-content .tabs-content{
+  text-align: center;
 }
 .more-container{
   background: #ffffff;
   padding: 32px 16px;
-  & > .title{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dashed #F0EBE7;
-    padding-bottom: 18px;
-    & > .text{
-      color:#BC8859;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    & .btn{
-      display: flex;
-      & > span{
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #F0EBE7;
-        border-radius: 2px;
-        margin:0 10px;
-        font-size: 12px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
-  }
-  & .list{
-    padding: 24px 0 0 0;
-    & > li{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 36px;
-      & img{
-        width: 64px;
-        height: 64px;
-      }
-      & .content{
-        flex: 1;
-        margin-top: 4px;
-        & P:first-child{
-          color:rgba(37,27,17,.6);
-          font-size: 16px;
-        }
-        & p:last-child{
-          color:#BC8859;
-          font-size: 16px;
-          margin-top:12px
-        }
-      }
-      & .icons{
-        display: flex;
-        align-items: flex-end;
-        margin-right: 20px;
-        & .iconfont{
-          font-size: 24px;
-        }
-      }
-      &:last-child{
-        margin: 0;
-      }
-    }
-  }
+}
+.more-container .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #F0EBE7;
+  padding-bottom: 18px;
+}
+.more-container .title .text{
+  color:#BC8859;
+  font-size: 20px;
+  font-weight: bold;
+}
+.more-container .title .btn{
+  display: flex;
+}
+.more-container .title .btn span{
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F0EBE7;
+  border-radius: 2px;
+  margin:0 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.more-container .list{
+  padding: 24px 0 0 0;
+}
+.more-container .list li{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.more-container .list li img{
+  width: 64px;
+  height: 64px;
+}
+.more-container .list li .content{
+  flex: 1;
+  margin-top: 4px;
+}
+.more-container .list li .content p:first-child{
+  color:rgba(37,27,17,.6);
+  font-size: 16px;
+}
+.more-container .list li .content p:last-child{
+  color:#BC8859;
+  font-size: 16px;
+  margin-top:12px
+}
+.more-container .list li .icons{
+  display: flex;
+  align-items: flex-end;
+  margin-right: 20px;
+}
+.more-container .list li .icons .iconfont{
+  font-size: 24px;
+}
+.more-container .list li:last-child{
+  margin: 0;
 }
 </style>
-<style lang="scss">
-.event-content{
-    margin-top: 44px;
-    & .el-button{
-      width: 164px;
-      height: 48px;
-      font-size: 16px;
-      & .iconfont{
-        margin-right: 8px !important;
-      }
-    }
-  }
-.content-tabs{
-  & .el-tabs{
-    & .el-tabs__nav-wrap{
-      & .el-tabs__nav{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-      &::after{
-        display: none;
-      }
-      & .el-tabs__active-bar{
-        display: none;
-      }
-      & .el-tabs__item{
-        color:rgba(37,27,17,.6);
-        font-size: 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: 0 56px;
-        &:first-child{
-          background: red;
-        }
-        &::after{
-          content:'';
-          width: 2px;
-          height: calc(100% - 20px);
-          background: rgba(37,27,17,.3);
-          position: absolute;
-          right: 0;
-        }
-        &:last-child::after{
-          display: none;
-        }
-      }
-      & .el-tabs__item.is-active{
-        color:#BC8859;
-        font-size: 20px !important;
-      }
-   }
-    & .el-tabs__content{
-      margin-top: 35px;
-      & .el-tab-pane{
-        text-align: center;
-      }
-    }
-  }
-}
-  </style>
 </head>
 
 <body>
@@ -430,6 +397,91 @@
           </div>
         </div>
       </div>
+      </div>
+      <div class="detail-content">
+        <el-row>
+          <div class="col-lg-9">
+            <div class="content-tabs">
+              <div class="tabs-container">
+                <div class="tabs-title">
+                  <div class="tabs-title-left">
+                    <a class="active">商品介绍</a>
+                    <a>阶梯报价</a>
+                    <a>购买须知</a>
+                  </div>
+                </div>
+                <div class="tabs-content">
+                  <img src="../../../assets/TPLUG-G1_01.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="more-container">
+              <p class="title">
+                <span class="text">更多商品推荐</span>
+                <span class="btn">
+                  <span>
+                    <i class="iconfont icon-left_arrow1x"></i>
+                  </span>
+                  <span>
+                    <i class="iconfont icon-right_arrow1x"></i>
+                  </span>
+                </span>
+              </p>
+              <ul class="list">
+                <li>
+                  <span class="img">
+                    <img src="../../../assets/位图.png" alt="">
+                  </span>
+                  <span class="content">
+                    <p>支架式无线自拍杆</p>
+                    <p>¥ 89</p>
+                  </span>
+                  <span class="icons">
+                    <i class="iconfont icon-shopping_cart1x"></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="img">
+                    <img src="../../../assets/位图.png" alt="">
+                  </span>
+                  <span class="content">
+                    <p>支架式无线自拍杆</p>
+                    <p>¥ 89</p>
+                  </span>
+                  <span class="icons">
+                    <i class="iconfont icon-shopping_cart1x"></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="img">
+                    <img src="../../../assets/位图.png" alt="">
+                  </span>
+                  <span class="content">
+                    <p>支架式无线自拍杆</p>
+                    <p>¥ 89</p>
+                  </span>
+                  <span class="icons">
+                    <i class="iconfont icon-shopping_cart1x"></i>
+                  </span>
+                </li>
+                <li>
+                  <span class="img">
+                    <img src="../../../assets/位图.png" alt="">
+                  </span>
+                  <span class="content">
+                    <p>支架式无线自拍杆</p>
+                    <p>¥ 89</p>
+                  </span>
+                  <span class="icons">
+                    <i class="iconfont icon-shopping_cart1x"></i>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </el-row>
       </div>
     </div>
   <!-- footer -->
