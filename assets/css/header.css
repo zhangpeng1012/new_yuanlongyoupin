@@ -1,0 +1,227 @@
+.header-container {
+  border-bottom: 1px solid #F0EBE7;
+  width: 100%;
+}
+.header{
+  height: 30px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 73px;
+  background: #251B11;
+}
+.header span{
+  color:#ffffff;
+  margin-right: 20px;
+}
+.header a{
+  color:#BC8859;
+}
+.header-search{
+  width: 100%;
+  height: 120px;
+  padding: 0 73px;
+  background: #3d3a32;
+  background-image: url('../logo.png');
+  background-repeat: no-repeat;
+  background-position: 73px center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-group{
+  padding-left: 250px;
+}
+.input-group input{
+  width: 344px!important;
+  height: 48px;
+  border: 0;
+  color: #ffffff;
+  background: #251B11;
+}
+input,input:focus{
+  border: none !important;
+  box-shadow: none !important;
+}
+.input-group-addon{
+  border: 0;
+  color: #ffffff;
+  background: #251B11;
+}
+.btn-default{
+  width: 164px;
+  height: 48px;
+}
+.header-content {
+  height: 60px;
+  padding: 0 73px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #251B11;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.content-left a{
+  margin-right: 72px;
+}
+.content-left a i:first-child{
+  margin-right: 8px;
+}
+.content-left a i:last-child{
+  margin-left: 32px;
+  font-weight: bold;
+}
+.content-left .iconfont{
+  font-size: 20px;
+  vertical-align: -1px;
+}
+.content-right{
+  width: 164px;
+  background: #F0EBE7;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.content-right .dropdown-link{
+  color:#BC8859;
+  font-size: 16px;
+  cursor: pointer;
+}
+.content-right .dropdown-link i{
+  font-size: 24px;
+}
+.content-right ul{
+  display: none;
+  width: 164px;
+  position: absolute;
+  top:60px;
+  left: 0;
+  z-index: 9;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+.content-right ul li{
+    font-size: 14px;
+    color:rgba(37,27,17,.6);
+    padding:12px 0;
+    text-align: center;
+    position: relative;
+}
+.content-right ul li:hover{
+   color:#DF6161;
+   background: #FBF9F7;
+   cursor: pointer;
+ }
+.content-right ul li::after{
+   content: '';
+   width: calc(100% - 16px);
+   height: 1px;
+   border-bottom: 1px dashed #F0EBE7;
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   margin-left:calc((-100% - -16px) / 2);
+ }
+.content-right ul li:last-child::after{
+    border:0;
+  }
+.menuList{
+  display: none;
+  width: calc(100% - 146px);
+  background: #ffffff;
+  position: absolute;
+  top:60px;
+  z-index: 9;
+  border-top: 2px solid #BC8859;}
+.menuList ul{
+    padding:0 14px;
+}
+.menuList ul li{
+    list-style: none;
+    margin-top: 17px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+.menuList ul li span:first-child{
+    width: 126px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: right;
+  }
+.menuList ul li span:last-child{
+    width: calc(100% - 180px);
+    display: inline-block;
+    font-size: 12px;
+    border-bottom: 1px dashed #F0EBE7;
+    margin-left: 20px;
+}
+.menuList ul li span a{
+    color:rgba(37,27,17,.6);
+    margin-right: 16px;
+}
+.menuList ul li span a:hover{
+   color:#BC8859;
+ }
+.menuList ul li span a:last-child{
+    margin-right: 0;
+  }
+
+.footer-container{
+  width: 100%;
+  height: 391px;
+  padding: 73px;
+  background: #3D3A32;
+}
+.footer-container .footer-btn-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-container .footer-btn-content div{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color:#ffffff;
+    cursor: pointer;
+}
+.footer-container .footer-btn-content img{
+    margin-right: 16px;
+  }
+.footer-tips{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(255,255,255,.6);
+}
+.footer-tips .footer-tips-left p{
+    color:rgba(255,255,255,.6);
+    font-size: 14px;
+    margin:18px 0;
+}
+ .footer-tips-right .el-button{
+    width: 164px;
+    height: 48px;
+    font-size: 16px;
+  }
+.footer-tips-right .el-button p{
+    color:#ffffff;
+    font-size: 12px;
+    text-align: right;
+    margin:18px 0;
+  }
+ .footer-msg p{
+    font-size: 14px;
+    color:rgba(255,255,255,.6);
+    margin-top:24px;
+  }

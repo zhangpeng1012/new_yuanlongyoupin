@@ -1,0 +1,8 @@
+/* bootstrap */
+
+
+/* 轮播 */
+.carousel{
+  overflow: hidden !important;
+  border-radius: 8px;
+}

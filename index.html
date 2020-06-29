@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> 元隆有品</title>
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+	<!-- jquery -->
+   <script src="assets/js/jquery-1.12.4.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+  <style>
+  .banner-next-box{
+    width: 100%;
+    height: 218px;
+    background: #d3dce6;
+    border-radius: 8px;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+    <div class="header">
+      <span>您好，欢迎光临元隆有品商城</span>
+      <a>登录</a>
+      <a style="margin:0 5px">/</a>
+      <a>注册</a>
+    </div>
+    <div class="header-search">
+      <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+      </div>
+      <button type="button" class="btn btn-default">购物车（0）</button>
+    </div>
+    <div class="header-content">
+      <div class="content-left">
+        <a id="menuBtn" >
+          <i class="icon iconfont ">&#xe60d;</i>
+
+          全部商品分类
+          <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+          <ul>
+            <li>
+              <span>电子产品、文娱办公</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+            <li>
+              <span>家居电器</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+          <li>个人信息</li>
+          <li>我的收藏</li>
+          <li>我的订单</li>
+          <li>退出登录</li>
+        </ul>
+      </div>
+    </div>
+    <!-- end -->
+    <div class="page">
+    <div class="page-content">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div style="height: 400px;background: #ccc">
+            </div>
+          </div>
+          <div class="item">
+            <div style="height: 400px;background: #d6e9c6">
+            </div>
+          </div>
+          <div class="item">
+            <div style="height: 400px;background: #99a9bf">
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control banner-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon banner-left" aria-hidden="true">
+            <i class="icon iconfont ">&#xe619;</i>
+          </span>
+        </a>
+        <a class="right carousel-control banner-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon banner-left" aria-hidden="true">
+               <i class="icon iconfont ">&#xe61c;</i>
+          </span>
+        </a>
+      </div>
+      <div class="row" style="margin-top: 28px;">
+        <div class="col-lg-4">
+          <div class="banner-next-box"></div>
+        </div>
+        <div class="col-lg-4">
+          <div class="banner-next-box"></div>
+        </div>
+        <div class="col-lg-4">
+          <div class="banner-next-box"></div>
+        </div>
+      </div>
+      <!-- 平台推荐 -->
+      <div class="tabs-container" style="margin-top: 64px;">
+        <div class="tabs-title">
+          <div class="tabs-title-left">
+            <a class="active">平台推荐</a>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="platform bg-white shadow" @click="$router.push({path:'/commodity/detail'})">
+                <span class="title">平安果无线音箱</span>
+                <span class="msg">送平安送祝福</span>
+                <img src="../../assets/4.png" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="platform bg-white shadow">
+                <span class="title">心有所鼠无线音箱</span>
+                <span class="msg">2020庚子新品</span>
+                <img src="../../assets/心有所“鼠”便携无线音箱-2副本.png" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="platform" style="justify-content: space-between;">
+                <div class="platform-column bg-white shadow">
+                  <div class="left">
+                    <span class="title">支架式无线自拍杆TPLUG PX</span>
+                    <span class="msg">4段式伸缩杆 稳固三脚架</span>
+                  </div>
+                  <div class="right">
+                    <img src="../../assets/位图.png" alt="">
+                  </div>
+                </div>
+                <div class="platform-column bg-white shadow">
+                  <div class="left">
+                    <span class="title">支架式手持无线云台TPLUG G1</span>
+                    <span class="msg">超轻易携带 一键随意拍</span>
+                  </div>
+                  <div class="right">
+                    <img src="../../assets/自拍杆 TPLUG G1主图.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:28px">
+            <div class="col-lg-6">
+              <div class="platform platform-small bg-white shadow">
+                <div class="platform-column bg-white">
+                  <div class="left">
+                    <span class="title" style="font-size:34px">守护 · 爱套装 WG01</span>
+                    <span class="msg" style="font-size:20px">留驻真爱瞬间·守护爱与永恒</span>
+                  </div>
+                  <div class="right">
+                    <img src="../../assets/1.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="platform platform-small bg-white shadow">
+                <span class="title">移动电源 MACAX101</span>
+                <span class="msg">小体积 大电量</span>
+                <img src="../../assets/移动电源.png" alt="">
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="platform platform-small bg-white shadow">
+                <span class="title">时光音伴侣音响灯SKOIN_M3</span>
+                <span class="msg">旅·伴·时·光·音</span>
+                <img src="../../assets/时光音.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 新品专区等 -->
+      <div class="tabs-container" style="margin-top: 72px;">
+        <div class="tabs-title">
+          <div class="tabs-title-left">
+            <a class="active">新品专区</a>
+            <a>居家健康</a>
+            <a>文娱办公</a>
+            <a>皮具箱包</a>
+          </div>
+          <div class="tabs-title-right">
+            <button class="more">查看更多<i class="iconfont icon-right_arrow1x"></i></button>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 特价专区等 -->
+      <div class="tabs-container" style="margin-top: 72px;">
+        <div class="tabs-title">
+          <div class="tabs-title-left">
+            <a class="active">特价专区</a>
+            <a>汽车用品</a>
+            <a>运动户外</a>
+            <a>母婴玩具</a>
+          </div>
+          <div class="tabs-title-right">
+            <button class="more">查看更多<i class="iconfont icon-right_arrow1x"></i></button>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="commodity-content bg-white shadow">
+                <i class="type new">new</i>
+                <div class="img">
+                  <img src="./assets/image(15).png" alt="">
+                </div>
+                <span class="name">无线蓝牙耳机</span>
+                <div class="price">
+                  <span>
+                    ￥199
+                  </span>
+                  <i class="iconfont icon-shopping_cart1x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+    <div class="footer-container">
+      <div class="footer-btn-content">
+        <div><img src="./assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="./assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="./assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="./assets/footer_icon_3.png" alt="">投诉建议</div>
+      </div>
+      <div class="footer-tips">
+        <div class="footer-tips-left">
+          <p>北京元隆雅图文化传播股份有限公司</p>
+          <p>电话：010-83528822</p>
+          <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+          <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+          <p>工作时间：9:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+      </div>
+    </div>
+    <!-- end -->
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> 元隆有品</title>
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../styles/index.css">
+	<!-- jquery -->
+   <script src="../../assets/js/jquery-1.12.4.min.js"></script>
+   <script src="../../assets/js/bootstrap.min.js"></script>
+  <style>
+ .page{
+  background: #ffffff !important;
+}
+.scroll-wrap{
+  height: 494px;
+  overflow: hidden;
+  position: relative;
+}
+.scroll-wrap .up,.scroll-wrap .down{
+    width: 100%;
+    height: 24px;
+    background: rgba(37,27,17,.1);;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.scroll-wrap .up{
+  top:0;
+}
+.scroll-wrap .down{
+  bottom: 0;
+}
+.scroll-wrap ul li{
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.scroll-wrap ul li img{
+  height: 80%;
+}
+.big-img-container{
+  height: 494px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.big-img-container > img{
+  height: 80%;
+}
+.commodity-detail-content{
+  height: 494px;
+  background: #FBF9F7;
+  padding: 28px;
+}
+.commodity-detail-content .title{
+  color:#251B11;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+.commodity-detail-content .old-price{
+  color:rgba(37,27,17,.6);
+  font-size: 16px;
+  text-decoration: line-through;
+  margin-bottom: 8px;
+}
+.commodity-detail-content .price{
+  color:#BC8859;
+  font-size: 34px;
+}
+.commodity-detail-content .price::before{
+  content: '￥';
+  font-size: 16px;
+}
+.commodity-detail-content .commodity-small-list{
+  margin-top: 30px;
+}
+.commodity-detail-content .commodity-small-list >span{
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  margin-right: 22px;
+  background: #ffffff;
+  border:1px dashed #000;
+}
+.commodity-detail-content .commodity-small-list >span img{
+  width: 100%;
+  height: 100%;
+}
+.commodity-detail-content .commodity-small-list > .active{
+  border:2px solid #BC8859
+}
+.commodity-detail-content .num{
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+}
+.commodity-detail-content .num > span{
+  color:rgba(37,27,17,.6);
+  font-size: 14px;
+  margin-left: 22px;
+}
+.commodity-detail-content .event-content{
+  display: flex;
+  align-items: center;
+}
+.commodity-detail-content .event-content > .btn > .iconfont{
+  margin-right: 18px;
+}
+.commodity-detail-content .event-content .icon-content{
+  height: 48px;
+  margin-left: 20px;
+  display: flex;
+}
+.commodity-detail-content .event-content .icon-content >span{
+  width: 64px;
+  height: 48px;
+  border-radius:4px;
+  margin-right: 20px;
+  border:1px solid rgba(240,235,231,1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.commodity-detail-content .event-content .icon-content >span > .iconfont{
+  font-size: 20px;
+}
+.commodity-detail-content .event-content .icon-content >span > a{
+  color:rgba(37,27,17,.6);
+  font-size: 12px;
+  margin-top: 3px;
+}
+.commodity-detail-content .remark{
+  color:rgba(37,27,17,.3);
+  font-size: 12px;
+  margin-top: 12px;
+}
+.detail-content{
+  background: #FBF9F7;
+  padding: 28px 73px;
+  & .content-tabs{
+    background: #ffffff;
+    padding:32px 28px;
+  }
+}
+.more-container{
+  background: #ffffff;
+  padding: 32px 16px;
+  & > .title{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #F0EBE7;
+    padding-bottom: 18px;
+    & > .text{
+      color:#BC8859;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    & .btn{
+      display: flex;
+      & > span{
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F0EBE7;
+        border-radius: 2px;
+        margin:0 10px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+  & .list{
+    padding: 24px 0 0 0;
+    & > li{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      & img{
+        width: 64px;
+        height: 64px;
+      }
+      & .content{
+        flex: 1;
+        margin-top: 4px;
+        & P:first-child{
+          color:rgba(37,27,17,.6);
+          font-size: 16px;
+        }
+        & p:last-child{
+          color:#BC8859;
+          font-size: 16px;
+          margin-top:12px
+        }
+      }
+      & .icons{
+        display: flex;
+        align-items: flex-end;
+        margin-right: 20px;
+        & .iconfont{
+          font-size: 24px;
+        }
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+</style>
+<style lang="scss">
+.event-content{
+    margin-top: 44px;
+    & .el-button{
+      width: 164px;
+      height: 48px;
+      font-size: 16px;
+      & .iconfont{
+        margin-right: 8px !important;
+      }
+    }
+  }
+.content-tabs{
+  & .el-tabs{
+    & .el-tabs__nav-wrap{
+      & .el-tabs__nav{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      &::after{
+        display: none;
+      }
+      & .el-tabs__active-bar{
+        display: none;
+      }
+      & .el-tabs__item{
+        color:rgba(37,27,17,.6);
+        font-size: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 56px;
+        &:first-child{
+          background: red;
+        }
+        &::after{
+          content:'';
+          width: 2px;
+          height: calc(100% - 20px);
+          background: rgba(37,27,17,.3);
+          position: absolute;
+          right: 0;
+        }
+        &:last-child::after{
+          display: none;
+        }
+      }
+      & .el-tabs__item.is-active{
+        color:#BC8859;
+        font-size: 20px !important;
+      }
+   }
+    & .el-tabs__content{
+      margin-top: 35px;
+      & .el-tab-pane{
+        text-align: center;
+      }
+    }
+  }
+}
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+    <div class="header">
+      <span>您好，欢迎光临元隆有品商城</span>
+      <a>登录</a>
+      <a style="margin:0 5px">/</a>
+      <a>注册</a>
+    </div>
+    <div class="header-search">
+      <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+      </div>
+      <button type="button" class="btn btn-default">购物车（0）</button>
+    </div>
+    <div class="header-content">
+      <div class="content-left">
+        <a id="menuBtn" >
+          <i class="icon iconfont ">&#xe60d;</i>
+
+          全部商品分类
+          <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+          <ul>
+            <li>
+              <span>电子产品、文娱办公</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+            <li>
+              <span>家居电器</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+          <li>个人信息</li>
+          <li>我的收藏</li>
+          <li>我的订单</li>
+          <li>退出登录</li>
+        </ul>
+      </div>
+    </div>
+    <!-- end -->
+    <div class="page">
+      <div class="page-content">
+        <ul class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">商品分类</a></li>
+          <li class="active">商品详情</li>
+      </ul>
+      <div class="row" style="margin-top:28px">
+        <div class="col-lg-2">
+          <div class="scroll-wrap">
+            <span class="up"><i class="iconfont icon-up_arrow1x"></i></span>
+            <span class="down"><i class="iconfont icon-down_arrow1x"></i></span>
+            <ul>
+              <li>
+                <img src="../../assets/image(15).png" alt="">
+              </li>
+              <li>
+                <img src="../../assets/image(15).png" alt="">
+              </li> <li>
+                <img src="../../assets/image(15).png" alt="">
+              </li>
+              <li>
+                <img src="../../assets/image(15).png" alt="">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="big-img-container">
+            <img src="../../../assets/时光音.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="commodity-detail-content">
+            <p class="title">支架式无线自拍杆 TPLUG G1</p>
+            <p class="old-price">市场价格¥ 1880</p>
+            <p class="price">1680</p>
+            <div class="commodity-small-list">
+              <span class="active">
+                <img src="../../../assets/时光音.png" alt="">
+              </span>
+              <span>
+                <img src="../../../assets/时光音.png" alt="">
+              </span>
+              <span>
+                <img src="../../../assets/时光音.png" alt="">
+              </span>
+            </div>
+            <div class="num">
+              <div class="input-number">
+                <span class="decrease">
+                  <i class="iconfont icon-minus1x"></i>
+                </span>
+                <span class="increase">
+                  <i class="iconfont icon-plus1x"></i>
+                </span>
+                <input type="text">
+              </div>
+              <span>库存 20 件</span>
+            </div>
+            <p class="event-content">
+              <button type="button" class="btn btn-default"><i class="iconfont icon-shopping_cart1x"></i>购买现货</button>
+              <span class="icon-content">
+                <span>
+                  <i class="iconfont icon-collect1x"></i>
+                  <a>收藏</a>
+                </span>
+                <span>
+                  <i class="iconfont icon-advice1x"></i>
+                  <a>咨询</a>
+                </span>
+              </span>
+            </p>
+            <p class="remark">备注说明（如有）</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <!-- footer -->
+    <div class="footer-container">
+      <div class="footer-btn-content">
+        <div><img src="./assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="./assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="./assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="./assets/footer_icon_3.png" alt="">投诉建议</div>
+      </div>
+      <div class="footer-tips">
+        <div class="footer-tips-left">
+          <p>北京元隆雅图文化传播股份有限公司</p>
+          <p>电话：010-83528822</p>
+          <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+          <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+          <p>工作时间：9:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+      </div>
+    </div>
+    <!-- end -->
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+
+
+</script>
+</body>
+
+</html>

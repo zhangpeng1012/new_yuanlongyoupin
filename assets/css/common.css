@@ -1,0 +1,220 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body {
+    min-width: 1366px;
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+.page{
+    background: #FBF9F7;
+}
+.page-content{
+    padding: 28px 73px;
+}
+.icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+button{
+    outline: none !important;
+}
+/* tab */
+.tabs-container{
+
+}
+.tabs-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tabs-title-left{
+
+}
+.tabs-title-left > a:first-child{
+    padding-left: 0;
+}
+.tabs-title-left > a{
+    color: rgba(37, 27, 17, 0.6);
+    font-size: 20px;
+    padding: 0 20px;
+}
+.tabs-title-left > .active{
+    color: #251B11;
+    font-size: 24px;
+    font-weight: bold;
+}
+.tabs-title-right > .more{
+    width: 164px;
+    height: 48px;
+    z-index: 9;
+    color:rgba(37,27,17,.6);
+    background: #F0EBE7;
+    border:1px solid rgba(240,235,231,1);
+    font-size: 16px;
+    padding-left: 40px;
+}
+.tabs-title-right > .more > i{
+    margin-left: 30px;
+}
+.tabs-content{
+    margin-top: 35px;
+}
+/* 阴影 */
+.shadow{
+    cursor: pointer;
+}
+.shadow:hover{
+    box-shadow:0px 4px 16px 0px rgba(240,235,231,1);
+}
+/* 商品 */
+.commodity-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 32px 0;
+    position: relative;
+    cursor: pointer;
+}
+.commodity-content .type{
+    width: 48px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    position: absolute;
+    top:24px;
+    left:22px;
+    border-radius:20px 2px 16px 2px;
+    font-size: 12px;
+    font-style: normal;
+}
+.commodity-content .new{
+    color: #687AE1;
+    background: #E9ECFF;
+}
+.commodity-content .hot{
+    color: #EEB05C;
+    background: #FFF8E7;
+}
+.commodity-content .img{
+    width: 204px;
+    height: 204px;
+}
+.commodity-content .name{
+    color:rgba(37,27,17,.6);
+    font-size: 16px;
+    margin: 20px 0;
+}
+.commodity-content .price{
+    width: 164px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 4px;
+    border:1px solid #F0EBE7;
+    color:#BC8859;
+    cursor: pointer;
+}
+.commodity-content .iconfont{
+    font-size: 20px;
+    position: relative;
+    top:-1px;
+}
+/* 面包屑 */
+.breadcrumb{
+    background: none;
+}
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "> ";
+    padding: 0 5px;
+}
+/* 计数器 */
+.input-number{
+    width: 135px;
+    height: 48px;
+    position: relative;
+    background: #ffffff;
+}
+.input-number .iconfont{
+    font-size: 20px;
+}
+.input-number .decrease,.input-number .increase{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    background: #ffffff;
+}
+.input-number .decrease{
+    left: 0;
+    padding-left: 10px;
+}
+.input-number .increase{
+    right: 0;
+    padding-right: 10px;
+}
+.input-number > input{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    outline: none;
+    position: absolute;
+    z-index: 1;
+}
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.clearfix :after{
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+
+li{
+    list-style: none;
+}
+
+.bg-white{
+    background: #ffffff;
+}
