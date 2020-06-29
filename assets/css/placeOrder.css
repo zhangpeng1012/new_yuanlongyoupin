@@ -1,0 +1,181 @@
+.title-p{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 28px 0;
+}
+.title-content{
+    width: 100%;
+    background:#fff;
+    box-shadow:0px -1px 0px 0px rgba(240,235,231,1);
+}
+.title-content .title{
+    padding: 24px 0 20px 36px;
+}
+.title-content .title span:first-child{
+      font-size: 16px;
+      font-weight: bold;
+  }
+.title-content .title span:last-child{
+      font-size: 14px;
+      font-weight: 400;
+      color:#BC8859;
+      margin-left:20px;
+      cursor: pointer;
+  }
+
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.title-container label{
+      margin-left: 36px;
+      margin-bottom: 32px;
+      margin-right: 10px;
+  }
+.title-container .title-message{
+      margin-bottom:32px ;
+      background: #FBF9F7;
+      border-radius: 4px;
+      width: 100%;
+}
+.title-container .title-message .title-header{
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+.title-container .title-message .title-header p{
+      font-size: 14px;
+      color:#251B11;
+  }
+.title-container .title-message .title-header div{
+      background: #EFECFF;
+      padding:8px;
+      margin: 0;
+ }
+.title-container .title-message .title-header div p {
+    color: #887AE1;
+    font-size: 12px;
+    margin: 0;
+}
+.title-content .title-container .title-message div:last-child{
+      font-size: 12px;
+      padding: 0 16px;
+}
+.title-content .title-container .title-message div:last-child p{
+    line-height: 22px;
+}
+.col-span{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px 0 36px;
+}
+.col-span .title{
+      color:#251B11;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+  }
+.col-span .select{
+      display: flex;
+      align-items: center;
+}
+.col-span .select> span{
+      color:#DF6161;
+      font-size: 12px;
+      margin-right: 12px;
+  }
+.table-name-content{
+    display: flex;
+    align-items: center;
+}
+.table-name-content img{
+      width: 80px;
+      height: 80px;
+  }
+.table-name-content .name{
+      color:#251B11;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 20px;
+      text-align: left;
+}
+.table-name-content .name p:last-child{
+      color:rgba(37,27,17,.6);
+      font-size: 14px;
+  }
+.table-stock{
+    color:#251B11;
+    font-size: 16px;
+    font-weight: bold;
+}
+.table-total{
+    color:#BC8859;
+    font-size: 16px;
+    font-weight: bold;
+}
+.active-container{
+    height: 72px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 75px 0 36px;}
+.active-container > span:first-child{
+      color:#251B11;
+      font-size: 14px;}
+.active-container > span:first-child > a{
+      color:#BC8859;
+      margin:0 5px;
+  }
+
+.active-container  .text{
+      color:#251B11;
+      font-size: 14px;
+}
+.active-container  .text> a{
+      color:#BC8859;
+      font-size: 24px;
+  }
+.confirm-content{
+    margin-top:28px;
+    width: 100%;
+    background:#fff;
+    box-shadow:0px -1px 0px 0px rgba(240,235,231,1);}
+.confirm-content div{
+      padding: 24px 0 20px 36px;
+}
+.confirm-content div h4{
+      font-family:PingFangSC-Medium,PingFang SC;
+      font-weight: bold;
+      font-size:16px;
+      margin:0 0 12px 0;
+  }
+.confirm-content div p{
+      font-size: 14px;
+      line-height:28px;}
+.confirm-content div p span{
+      color:#BC8859
+  }
+
+.order-footer{
+    margin:28px 0 0 70px;
+    display: flex;
+    justify-content: flex-end;
+}
+.order-footer button{
+      width: 164px;
+      height: 48px;
+  }
+.order-footer button:first-child{
+    margin-right: 20px;
+    color: #251B11;
+    border: 1px solid #F0EBE7;
+    background: #fff;
+}
+.order-footer button:first-child.focus,.order-footer button:first-child:focus
+{color:#c9a07a;background-color:#F0EBE7;border-color:#c9a07a}
+.order-footer button:first-child:hover{color:#c9a07a;background-color:#F0EBE7;border-color:#c9a07a}
