@@ -6,3 +6,6 @@
   overflow: hidden !important;
   border-radius: 8px;
 }
+.modal{
+  top:10%;
+}

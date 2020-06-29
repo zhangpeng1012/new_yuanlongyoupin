@@ -2,9 +2,406 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>提交订单</title>
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../assets/css/orderDetail.css">
+
 </head>
 <body>
-$END$
+<!-- header -->
+<div class="header">
+    <span>您好，欢迎光临元隆有品商城</span>
+    <a>登录</a>
+    <a style="margin:0 5px">/</a>
+    <a>注册</a>
+</div>
+<div class="header-search">
+    <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+    </div>
+    <button type="button" class="btn btn-default">购物车（0）</button>
+</div>
+<div class="header-content">
+    <div class="content-left">
+        <a id="menuBtn" >
+            <i class="icon iconfont ">&#xe60d;</i>
+
+            全部商品分类
+            <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+            <ul>
+                <li>
+                    <span>电子产品、文娱办公</span>
+                    <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+                </li>
+                <li>
+                    <span>家居电器</span>
+                    <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+            <li>个人信息</li>
+            <li>我的收藏</li>
+            <li>我的订单</li>
+            <li>退出登录</li>
+        </ul>
+    </div>
+</div>
+<!-- end -->
+<div class="page">
+    <div class="page-content">
+        <ul class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">我的账户</a></li>
+            <li><a href="#">我的订单</a></li>
+            <li class="active">订单详情</li>
+        </ul>
+        <div class="title-container">
+            <div class="left-arow">
+                <p>订单详情</p>
+            </div>
+            <div class="right-arow">
+                <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">查看物流</button>
+            </div>
+        </div>
+        <div class="box-card">
+            <div class="clear-box">
+                <div class="left-arrow">
+                    <p>
+                        <span>订单状态：</span>
+                        <span>运输中</span>
+                    </p>
+                </div>
+                <div class="right-arrow">
+                    <p>成交时间：2020-04-15 12:00</p>
+                </div>
+            </div>
+            <div class="text">
+                <h4>收货地址</h4>
+                <div class="text-content">
+                    <div class="title-message">
+                        <p class="title-name">刘志龙</p>
+                        <div>
+                            <p>15110004986</p>
+                            <p>北京市 市辖区 西城区 平原里21号</p>
+                            <p>100053</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 28px">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>库存量</th>
+                        <th>购买数量</th>
+                        <th>单价</th>
+                        <th>商品总价</th>
+                        <th>重量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6">
+                            <div  class="col-span">
+                                <span class="title">京东自营</span>
+                                <span class="select">
+                                    <span>为保证运输时效，请尽量选择准确乡镇街道</span>
+                                    <select class="form-control" placeholder="街道选择">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                           <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                          <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                         <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-total">
+                              ￥100
+                            </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="active-container">
+                    <span>共<a>7</a>件商品，已选择<a>6</a>件</span>
+                    <span class="text">合计：<a>￥648</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-content">
+            <div>
+                <h4>确认订单价格</h4>
+                <p>本单商品重量合计：1.75000000kg</p>
+                <p>货运费：CNY 6.90 </p>
+                <p> 产品金额： 648.00 元</p>
+                <p>优惠：0元</p>
+                <p> 合计金额：CNY 678.00元</p>
+                <p>（产品金额 + 运费金额 - 优惠金额 = 648.00元）</p>
+            </div>
+
+        </div>
+        <div class="order-footer">
+            <button type="button" class="btn btn-default">继续购物</button>
+            <button ype="button" class="btn btn-default">结算并支付</button>
+        </div>
+
+    </div>
+</div>
+<!-- footer -->
+<div class="footer-container">
+    <div class="footer-btn-content">
+        <div><img src="../../assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="../../assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="../../assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="../../assets/footer_icon_3.png" alt="">投诉建议</div>
+    </div>
+    <div class="footer-tips">
+        <div class="footer-tips-left">
+            <p>北京元隆雅图文化传播股份有限公司</p>
+            <p>电话：010-83528822</p>
+            <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+            <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+            <p>工作时间：9:00-18:00</p>
+        </div>
+    </div>
+    <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+    </div>
+</div>
+<!-- end -->
+<!--模态框开始-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">订单状态明细</h4>
+            </div>
+            <div class="modal-body">
+                <div class="title-state">
+                    <p>单据状态：<span>运送中</span></p>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>时间</th>
+                        <th style="text-align: left">订单状态</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td align="center">
+                           <span class="table-detail">
+                              1
+                           </span>
+                        </td>
+                        <td align="center">
+                           <span class="table-detail">
+                              2020.06.22 12:40
+                           </span>
+                        </td>
+                        <td align="left">
+                           <span class="table-detail">
+                              订单已提交
+                           </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <span class="table-detail">
+                              1
+                           </span>
+                        </td>
+                        <td align="center">
+                           <span class="table-detail">
+                              2020.06.22 12:40
+                           </span>
+                        </td>
+                        <td align="left">
+                           <span class="table-detail">
+                              扫描员已扫描，订单已出库
+                           </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                           <span class="table-detail">
+                              1
+                           </span>
+                        </td>
+                        <td align="center">
+                           <span class="table-detail">
+                              2020.06.22 12:40
+                           </span>
+                        </td>
+                        <td align="left">
+                           <span class="table-detail">
+                              订单在【北京市西城区分拣中心】分拣完成，准备送往【北京牛街站】
+                           </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
+<!-- jquery -->
+<script src="../../assets/js/jquery-1.12.4.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<!--再引入toPage.js-->
+<script src="../../assets/js/toPage.js"></script>
+<!--插件使用-->
+<script src="../../assets/js/index.js"></script>
+<script>
+
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+
+
+</script>
 </body>
 </html>
