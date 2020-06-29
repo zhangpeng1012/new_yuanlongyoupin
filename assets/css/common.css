@@ -188,18 +188,18 @@ button{
     background: #ffffff;
     margin: 0;
 }
-.table .checkbox-inline{
+.checkbox-inline{
     width: 14px;
     height: 14px;
     border: 1px solid #DCDFE6;
     padding-left: 0;
     vertical-align: -2px;
 }
-.table .is-focus{
+.checkbox-inline.is-focus{
     background-color: #BC8859;
     border-color: #BC8859;
 }
-.table .checkbox-inline::after{
+.checkbox-inline::after{
     box-sizing: content-box;
     content: "";
     border: 1px solid #FFFFFF;
@@ -212,7 +212,7 @@ button{
     top: 1px;
     transform: rotate(45deg) scaleY(1);
 }
-.table .checkbox-inline input{
+.checkbox-inline input{
     width: 0;
 }
 .table > thead  th{

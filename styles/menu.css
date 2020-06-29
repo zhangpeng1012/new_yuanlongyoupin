@@ -1,0 +1,80 @@
+.view-container{
+  display: flex;
+  margin-top:28px;
+}
+.view-container .menu{
+  width: 284px;
+}
+.view-container .menu .menu-list{
+  background: #ffffff;
+  padding: 24px 32px 32px 32px;
+  box-shadow:0px 1px 0px 0px rgba(240,235,231,1);
+  border-radius: 8px;
+}
+.view-container .menu .menu-list .title{
+  color:#BC8859;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px dashed #F0EBE7;
+  padding-bottom: 17px;
+}
+.view-container .menu .menu-list ul li{
+  color:#251B11;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.view-container .menu .menu-list ul .active{
+  color:#BC8859;
+}
+.view-container .menu .tips{
+  padding: 24px 32px 31px 32px;
+  margin-top: 28px;
+  background: #ffffff;
+  box-shadow:0px 1px 0px 0px rgba(240,235,231,1);
+  border-radius:8px;
+}
+.view-container .menu .tips .title{
+  color:#BC8859;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px dashed #F0EBE7;
+  padding-bottom: 17px;
+}
+.view-container .menu .tips .content .name{
+  color:#251B11;
+  font-size: 16px;
+  font-weight: bold;
+  margin:16px 0 8px 0;
+}
+.view-container .menu .tips .content .phone{
+  color:rgba(37,27,17,.6);
+  font-size: 16px;
+}
+.view-container .menu .tips .content .phone .iconfont{
+  margin-right: 8px;
+}
+.view-container .view{
+  flex: 1;
+  background: #ffffff;
+  margin-left: 28px;
+  box-shadow:0px 1px 0px 0px rgba(240,235,231,1);
+  border-radius:8px;
+}
+.view-container .view div{
+  background: #ffffff;
+}
+.view-container .view .page{
+  background: #ffffff !important;
+}
+.view-container .view >.page > .page-content{
+  padding:24px 32px !important;
+}
+.view-container .view >.page > .page-content .title{
+  color:#251B11;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px dashed #F0EBE7;
+  padding-bottom: 12px;
+}
