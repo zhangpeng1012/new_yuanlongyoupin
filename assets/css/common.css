@@ -318,8 +318,4 @@ input[type='radio']:checked + label::before {
     background-color: #BC8859;
     background-clip: content-box;
 }
-.form-control{
-    width: 200px;
-    height: 40px;
-    border: 1px solid #F0EBE7;
-}
+

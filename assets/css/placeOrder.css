@@ -179,3 +179,8 @@
 .order-footer button:first-child.focus,.order-footer button:first-child:focus
 {color:#c9a07a;background-color:#F0EBE7;border-color:#c9a07a}
 .order-footer button:first-child:hover{color:#c9a07a;background-color:#F0EBE7;border-color:#c9a07a}
+.form-control{
+    width: 200px;
+    height: 40px;
+    border: 1px solid #F0EBE7;
+}
