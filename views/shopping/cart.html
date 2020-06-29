@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> 元隆有品</title>
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../styles/index.css">
+	<!-- jquery -->
+   <script src="../../assets/js/jquery-1.12.4.min.js"></script>
+   <script src="../../assets/js/bootstrap.min.js"></script>
+  <style>
+.title-content{
+  margin:28px 0;
+}
+.title-content .title-text{
+  color:#251B11;
+  font-size: 16px;
+}
+.title-content .title-num{
+  color:rgba(37,27,17,.6);
+  font-size: 14px;
+  margin-left: 20px;
+}
+.table-name-content{
+  display: flex;
+  align-items: center;
+}
+.table-name-content img{
+  width: 80px;
+  height: 80px;
+}
+.table-name-content .name{
+  color:#251B11;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.table-stock{
+  color:#251B11;
+  font-size: 16px;
+  font-weight: bold;
+}
+.input-number .decrease,.input-number .increase,.input-number input{
+  background: #FBF9F7;
+}
+.table-total{
+  color:#BC8859;
+  font-size: 16px;
+  font-weight: bold;
+}
+.icon-delete1x{
+  color:red;
+  font-size: 26px;
+}
+.active-container{
+  height: 72px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 36px;
+}
+.active-container span:first-child{
+  color:#251B11;
+  font-size: 14px;
+}
+.active-container span:first-child a{
+  color:#BC8859;
+  margin:0 5px;
+}
+.active-container span:last-child{
+  display: flex;
+  align-items: center;
+}
+.active-container span:last-child .btn{
+  margin-left: 20px;
+}
+.active-container span:last-child .text{
+  color:#251B11;
+  font-size: 14px;
+}
+.active-container span:last-child .text a{
+  color:#BC8859;
+  font-size: 24px;
+}
+.tips{
+  color:rgba(37,27,17,.6);
+  font-size: 12px;
+  padding:12px 0 0 33px;
+}
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+    <div class="header">
+      <span>您好，欢迎光临元隆有品商城</span>
+      <a>登录</a>
+      <a style="margin:0 5px">/</a>
+      <a>注册</a>
+    </div>
+    <div class="header-search">
+      <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+      </div>
+      <button type="button" class="btn btn-default">购物车（0）</button>
+    </div>
+    <div class="header-content">
+      <div class="content-left">
+        <a id="menuBtn" >
+          <i class="icon iconfont ">&#xe60d;</i>
+
+          全部商品分类
+          <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+          <ul>
+            <li>
+              <span>电子产品、文娱办公</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+            <li>
+              <span>家居电器</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+          <li>个人信息</li>
+          <li>我的收藏</li>
+          <li>我的订单</li>
+          <li>退出登录</li>
+        </ul>
+      </div>
+    </div>
+    <!-- end -->
+    <div class="page">
+      <div class="page-content">
+        <ul class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li class="active">购物车</li>
+        </ul>
+        <p class="title-content">
+          <span class="title-text">购物车</span>
+          <span class="title-num">共4个礼品</span>
+        </p>
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="selection">
+                    <label class="checkbox-inline">
+                      <input type="checkbox">
+                  </label>
+                  全选
+                  </th>
+                  <th>商品名称</th>
+                  <th>库存量</th>
+                  <th>购买数量</th>
+                  <th>单价</th>
+                  <th>商品总价</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="selection" width="80">
+                    <label class="checkbox-inline">
+                      <input type="checkbox"  value="option1">
+                  </label>
+                  </td>
+                  <td>
+                    <div class="table-name-content">
+                      <img src="../../assets/image(15).png" alt="">
+                      <span class="name">无线蓝牙耳机</span>
+                    </div>
+                  </td>
+                  <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <div class="input-number">
+                      <span class="decrease">
+                        <i class="iconfont icon-minus1x"></i>
+                      </span>
+                      <span class="increase">
+                        <i class="iconfont icon-plus1x"></i>
+                      </span>
+                      <input type="number" value="1">
+                    </div>
+                  </td>
+                  <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                  </td>
+                  <td align="center">
+                    <i class="iconfont icon-delete1x"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selection" width="80">
+                    <label class="checkbox-inline">
+                      <input type="checkbox"  value="option1">
+                  </label>
+                  </td>
+                  <td>
+                    <div class="table-name-content">
+                      <img src="../../assets/image(15).png" alt="">
+                      <span class="name">无线蓝牙耳机</span>
+                    </div>
+                  </td>
+                  <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <div class="input-number">
+                      <span class="decrease">
+                        <i class="iconfont icon-minus1x"></i>
+                      </span>
+                      <span class="increase">
+                        <i class="iconfont icon-plus1x"></i>
+                      </span>
+                      <input type="number" value="1">
+                    </div>
+                  </td>
+                  <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                  </td>
+                  <td align="center">
+                    <i class="iconfont icon-delete1x"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selection" width="80">
+                    <label class="checkbox-inline">
+                      <input type="checkbox"  value="option1">
+                  </label>
+                  </td>
+                  <td>
+                    <div class="table-name-content">
+                      <img src="../../assets/image(15).png" alt="">
+                      <span class="name">无线蓝牙耳机</span>
+                    </div>
+                  </td>
+                  <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <div class="input-number">
+                      <span class="decrease">
+                        <i class="iconfont icon-minus1x"></i>
+                      </span>
+                      <span class="increase">
+                        <i class="iconfont icon-plus1x"></i>
+                      </span>
+                      <input type="number" value="1">
+                    </div>
+                  </td>
+                  <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                  </td>
+                  <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                  </td>
+                  <td align="center">
+                    <i class="iconfont icon-delete1x"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="active-container">
+              <span>共<a>7</a>件商品，已选择<a>6</a>件</span>
+              <span>
+                <span class="text">
+                  合计：<a>￥648</a>
+                </span>
+                <button class="btn">继续购物</button>
+                <button class="btn btn-default">去结算</button>
+              </span>
+            </div>
+            <p class="tips">特别注意：此页面不包含赠品信息，请在下一环节确认赠品和赠品数量是否正确，确认无误再下单</p>
+            <!-- 推荐 -->
+            <div class="tabs-container" style="margin-top: 72px;">
+              <div class="tabs-title">
+                <div class="tabs-title-left">
+                  <a class="active">推荐产品</a>
+                </div>
+                <div class="tabs-title-right">
+                  <button class="more">查看更多<i class="iconfont icon-right_arrow1x"></i></button>
+                </div>
+              </div>
+              <div class="tabs-content">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <div class="commodity-content bg-white shadow">
+                      <i class="type new">new</i>
+                      <div class="img">
+                        <img src="../../assets/image(15).png" alt="">
+                      </div>
+                      <span class="name">无线蓝牙耳机</span>
+                      <div class="price">
+                        <span>
+                          ￥199
+                        </span>
+                        <i class="iconfont icon-shopping_cart1x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="commodity-content bg-white shadow">
+                      <i class="type new">new</i>
+                      <div class="img">
+                        <img src="../../assets/image(15).png" alt="">
+                      </div>
+                      <span class="name">无线蓝牙耳机</span>
+                      <div class="price">
+                        <span>
+                          ￥199
+                        </span>
+                        <i class="iconfont icon-shopping_cart1x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="commodity-content bg-white shadow">
+                      <i class="type new">new</i>
+                      <div class="img">
+                        <img src="../../assets/image(15).png" alt="">
+                      </div>
+                      <span class="name">无线蓝牙耳机</span>
+                      <div class="price">
+                        <span>
+                          ￥199
+                        </span>
+                        <i class="iconfont icon-shopping_cart1x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="commodity-content bg-white shadow">
+                      <i class="type new">new</i>
+                      <div class="img">
+                        <img src="../../assets/image(15).png" alt="">
+                      </div>
+                      <span class="name">无线蓝牙耳机</span>
+                      <div class="price">
+                        <span>
+                          ￥199
+                        </span>
+                        <i class="iconfont icon-shopping_cart1x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- footer -->
+    <div class="footer-container">
+      <div class="footer-btn-content">
+        <div><img src="./assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="./assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="./assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="./assets/footer_icon_3.png" alt="">投诉建议</div>
+      </div>
+      <div class="footer-tips">
+        <div class="footer-tips-left">
+          <p>北京元隆雅图文化传播股份有限公司</p>
+          <p>电话：010-83528822</p>
+          <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+          <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+          <p>工作时间：9:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+      </div>
+    </div>
+    <!-- end -->
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+
+
+</script>
+</body>
+
+</html>

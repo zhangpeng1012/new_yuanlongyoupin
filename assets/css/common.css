@@ -135,6 +135,7 @@ button{
 /* 面包屑 */
 .breadcrumb{
     background: none;
+    padding:  8px 0;
 }
 .breadcrumb > li + li:before {
     color: #CCCCCC;
@@ -174,7 +175,72 @@ button{
     text-align: center;
     outline: none;
     position: absolute;
+    left: 0;
     z-index: 1;
+    padding-left: 10px;
+}
+/* table */
+.table{
+    width: 100%;
+    background: #ffffff;
+    margin: 0;
+}
+.table .checkbox-inline{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #DCDFE6;
+    padding-left: 0;
+    vertical-align: -2px;
+}
+.table .is-focus{
+    background-color: #BC8859;
+    border-color: #BC8859;
+}
+.table .checkbox-inline::after{
+    box-sizing: content-box;
+    content: "";
+    border: 1px solid #FFFFFF;
+    border-left: 0;
+    border-top: 0;
+    width: 3px;
+    height: 7px;
+    left: 4px;
+    position: absolute;
+    top: 1px;
+    transform: rotate(45deg) scaleY(1);
+}
+.table .checkbox-inline input{
+    width: 0;
+}
+.table > thead  th{
+    color: rgba(37, 27, 17, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 18px 0 !important;
+    border-bottom: 1px solid #ddd !important;
+    text-align: center;
+}
+.table .selection{
+    text-align: left;
+    padding-left: 10px !important;
+}
+.table tbody td{
+    padding: 18px 0 !important;
+    vertical-align: middle !important;
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+}
+/* btn */
+.btn{
+    width: 164px;
+    height: 48px;
+    background: #ffffff;
+    border: 1px solid #DCDFE6;
+}
+.btn-default{
+    color: #ffffff;
+    background: #BC8859;
+    border-color: #BC8859;
 }
 html {
     height: 100%;
