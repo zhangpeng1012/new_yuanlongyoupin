@@ -242,6 +242,16 @@ button{
     background: #BC8859;
     border-color: #BC8859;
 }
+/* validate */
+.validate{
+    position: relative;
+}
+.validate::before{
+    content:'*';
+    color:red;
+    position: absolute;
+    left:-8px;
+}
 html {
     height: 100%;
     box-sizing: border-box;
