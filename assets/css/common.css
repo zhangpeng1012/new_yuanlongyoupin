@@ -46,6 +46,7 @@ button{
     color: rgba(37, 27, 17, 0.6);
     font-size: 20px;
     padding: 0 20px;
+    outline: none;
 }
 .tabs-title-left > .active{
     color: #251B11;
@@ -157,6 +158,7 @@ button{
     position: absolute;
     z-index: 10;
     background: #ffffff;
+    cursor: pointer;
 }
 .input-number .decrease{
     left: 0;
