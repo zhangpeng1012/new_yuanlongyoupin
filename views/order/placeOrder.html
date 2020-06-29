@@ -7,6 +7,8 @@
     <title>提交订单</title>
     <link rel="stylesheet" href="../../styles/index.css">
     <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../assets/css/placeOrder.css">
+
 </head>
 <body>
 <!-- header -->
@@ -82,6 +84,205 @@
             <li><a href="#">购物车</a></li>
             <li class="active">提交订单</li>
         </ul>
+        <p class="title-p">提交订单</p>
+        <div class="title-content">
+            <p class="title">
+                <span>选择收货地址</span>
+                <span>管理收货地址</span>
+            </p>
+            <div class="row">
+                <div class="col-lg-3 title-container">
+                    <input class="radio_type" type="radio" name="type" id="radio1" checked="checked"/>
+                    <label for="radio1"></label>
+                    <div class="title-message">
+                        <div class="title-header">
+                            <p>刘金龙</p>
+                            <div>
+                                <p>默认地址</p>
+                            </div>
+
+                        </div>
+                        <div>
+                            <p>15110004986</p>
+                            <p>北京市 市辖区 西城区 平原里21号</p>
+                            <p>100053</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 title-container">
+                    <input class="radio_type" type="radio" name="type" id="radio2"/>
+                    <label for="radio2"></label>
+                    <div class="title-message">
+                        <div class="title-header">
+                            <p>刘金龙</p>
+                        </div>
+                        <div>
+                            <p>15110004986</p>
+                            <p>北京市 市辖区 西城区 平原里21号</p>
+                            <p>100053</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 28px">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>库存量</th>
+                        <th>购买数量</th>
+                        <th>单价</th>
+                        <th>商品总价</th>
+                        <th>重量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6">
+                            <div  class="col-span">
+                                <span class="title">京东自营</span>
+                                <span class="select">
+                                    <span>为保证运输时效，请尽量选择准确乡镇街道</span>
+                                    <select class="form-control" placeholder="街道选择">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                           <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                          <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                    <span class="table-total">
+                      ￥100
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-name-content">
+                                <img src="../../assets/image(15).png" alt="">
+                                <span class="name">无线蓝牙耳机</span>
+                            </div>
+                        </td>
+                        <td align="center">
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                         <span class="table-stock">
+                              1
+                           </span>
+                        </td>
+                        <td>
+                    <span class="table-stock">
+                      99
+                    </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-total">
+                              ￥100
+                            </span>
+                        </td>
+                        <td align="center">
+                            <span class="table-stock">
+                                0.25
+                            </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="active-container">
+                    <span>共<a>7</a>件商品，已选择<a>6</a>件</span>
+                    <span class="text">
+              合计：<a>￥648</a>
+            </span>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-content">
+            <div>
+                <h4>确认订单价格</h4>
+                <p>本单商品重量合计：1.75000000kg</p>
+                <p>货运费：CNY 6.90 </p>
+                <p> 产品金额： 648.00 元</p>
+                <p>优惠：0元</p>
+                <p> 合计金额：<span>CNY 678.00元</span></p>
+                <p>（产品金额 + 运费金额 - 优惠金额 = 648.00元）</p>
+            </div>
+
+        </div>
+        <div class="order-footer">
+            <button type="button" class="btn btn-default">继续购物</button>
+            <button ype="button" class="btn btn-default">结算并支付</button>
+        </div>
 
 </div>
 </div>
@@ -111,4 +312,23 @@
 <!-- end -->
 
 </body>
+<!-- jquery -->
+<script src="../../assets/js/jquery-1.12.4.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<!--再引入toPage.js-->
+<script src="../../assets/js/toPage.js"></script>
+<!--插件使用-->
+<script src="../../assets/js/index.js"></script>
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+
+
+</script>
 </html>
