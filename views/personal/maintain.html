@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> 元隆有品</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/menu.css">
+    <!-- jquery -->
+    <script src="../../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+   <style>
+       .title > span{
+           color:rgba(37,27,17,.6);
+           font-size: 12px;
+           font-weight: 500;
+           padding-left: 16px;
+       }
+       .form-horizontal{
+           overflow: hidden;
+           margin-top: 28px;
+       }
+   </style>
+</head>
+
+<body>
+<!-- header -->
+<div class="header">
+    <span>您好，欢迎光临元隆有品商城</span>
+    <a>登录</a>
+    <a style="margin:0 5px">/</a>
+    <a>注册</a>
+</div>
+<div class="header-search">
+    <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+    </div>
+    <button type="button" class="btn btn-default">购物车（0）</button>
+</div>
+<div class="header-content">
+    <div class="content-left">
+        <a id="menuBtn" >
+            <i class="icon iconfont ">&#xe60d;</i>
+
+            全部商品分类
+            <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+            <ul>
+                <li>
+                    <span>电子产品、文娱办公</span>
+                    <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+                </li>
+                <li>
+                    <span>家居电器</span>
+                    <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+            <li>个人信息</li>
+            <li>我的收藏</li>
+            <li>我的订单</li>
+            <li>退出登录</li>
+        </ul>
+    </div>
+</div>
+<!-- end -->
+<div class="page">
+    <div class="page-content">
+        <ul class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li>我的账户</li>
+            <li class="active">信息维护</li>
+        </ul>
+        <div class="view-container">
+            <div class="menu">
+                <div class="menu-list">
+                    <p class="title">我的账户</p>
+                    <ul>
+                        <li class="active"><a>信息维护</a></li>
+                        <li><a>修改密码</a></li>
+                        <li><a>账户信息</a></li>
+                        <li><a>收货地址维护</a></li>
+                        <li><a>我的收藏</a></li>
+                        <li><a>我的订单</a></li>
+                    </ul>
+                </div>
+                <div class="tips">
+                    <p class="title">投诉热线</p>
+                    <span class="content">
+              <p class="name">李士毅</p>
+              <p class="phone"><i class="iconfont icon-phone1x"></i>010-83528822-8615</p>
+            </span>
+                </div>
+            </div>
+            <div class="view">
+                <div class="page">
+                    <div class="page-content" style="padding:24px 0 !important;">
+                        <p class="title" style="padding-left: 32px; ">信息维护</p>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">用户名</span>
+                                </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">姓名</span>
+                                </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">手机号码</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">电话号码</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">邮政编码</span></label>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="col-lg-2 control-label">所在地区</label>
+                                <div class="col-lg-2">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">街道地址</span></label>
+                                <div class="col-lg-6">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">电子邮箱</span>
+                                </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname" class="col-lg-2 control-label">
+                                    <span class="validate">工号</span>
+                                </label>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-2 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-default">保存</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer-container">
+    <div class="footer-btn-content">
+        <div><img src="../../assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="../../assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="../../assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="../../assets/footer_icon_3.png" alt="">投诉建议</div>
+    </div>
+    <div class="footer-tips">
+        <div class="footer-tips-left">
+            <p>北京元隆雅图文化传播股份有限公司</p>
+            <p>电话：010-83528822</p>
+            <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+            <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+            <p>工作时间：9:00-18:00</p>
+        </div>
+    </div>
+    <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+    </div>
+</div>
+<!-- end -->
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+</script>
+</body>
+
+</html>
