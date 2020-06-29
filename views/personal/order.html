@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> 元隆有品</title>
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../styles/index.css">
+  <link rel="stylesheet" href="../../styles/menu.css">
+  <link rel="stylesheet" href="../../assets/css/toPage.css">
+<style>
+  .view .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .view .title .search{
+    display: flex;
+    align-items: center;
+  }
+  .view .title .search > span{
+    margin-left: 39px;
+    color:rgba(37,27,17,.6);
+    font-size: 16px;
+  }
+  .view .title .search > span > i{
+    margin-left: 6px;
+  }
+  .view .title .input-group{
+    display: flex;
+    align-items: center;
+    border: 1px solid #DCDFE6;
+    padding-right: 10px;
+    border-radius: 4px;
+  }
+  .view .title .form-control{
+    color: #606266;
+    width: 275px;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    border:0;
+    box-shadow: none !important;
+  }
+
+  .tabs{
+    margin-top: 16px;
+  }
+.tabs-header > span{
+  color:rgba(37,27,17,.6);
+  font-size: 14px;
+  padding: 0 16px;
+  position: relative;
+}
+.tabs-header > span::after{
+  content:'';
+  width: 2px;
+  height: 90%;
+  background: rgba(37,27,17,.3);
+  position: absolute;
+  right: 0;
+  top:1px;
+}
+.tabs-header > span:first-child{
+  padding-left: 0;
+}
+.tabs-header > span:last-child::after{
+  display: none;
+}
+.tabs-header .active{
+  color:#BC8859;
+}
+.tabs-content{
+      padding:20px 0;
+}
+.tabs-content .commodity{
+  margin-bottom: 30px;
+}
+.tabs-content .commodity .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 0;
+}
+.tabs-content .commodity .header .left .type{
+  font-size: 14px;
+  margin-right: 24px;
+}
+.tabs-content .commodity .header .left .error{
+  color:#DF6161;
+}
+.tabs-content .commodity .header .left .primary{
+  color:#687AE1;
+}
+.tabs-content .commodity .header .left .success{
+  color:#2EB37F;
+}
+.tabs-content .commodity .header .left .time{
+  margin-right: 16px;
+}
+.tabs-content .commodity .header .left .time,.tabs-content .commodity .header .left .code{
+  color:rgba(37,27,17,.6);
+  font-size: 12px;
+}
+.tabs-content .commodity .header .right{
+  color:#BC8859;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tabs-content .commodity .content{
+  padding:20px 0;
+  border-top:1px solid #F0EBE7;
+  border-bottom:1px solid #F0EBE7;
+}
+.tabs-content .commodity .content .row{
+  display: flex;
+  align-items: center;
+}
+.tabs-content .commodity .content .row .col-lg-2{
+  text-align: center;
+}
+.tabs-content .commodity .content img{
+  width: 80px;
+  height: 80px;
+}
+.tabs-content .commodity .content .name,.tabs-content .commodity .content span{
+  color:#251B11;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tabs-content .commodity .content .color{
+  color:rgba(37,27,17,.6);
+  font-size: 14px;
+  margin-top: 3px;
+}
+.tabs-content .commodity .content span:last-child{
+  color:#BC8859;
+}
+.tabs-content .commodity .content img{
+  width: 80px;
+  height: 80px;
+}
+.tabs-content .commodity .footer{
+  text-align: right;
+  margin-top: 16px;
+}
+.tabs-content .commodity .footer .btn{
+  margin: 10px;
+}
+</style>
+</head>
+
+<body>
+  <!-- header -->
+    <div class="header">
+      <span>您好，欢迎光临元隆有品商城</span>
+      <a>登录</a>
+      <a style="margin:0 5px">/</a>
+      <a>注册</a>
+    </div>
+    <div class="header-search">
+      <div class="input-group">
+        <input type="text" class="form-control" onkeydown="onKeyDown(event)"/>
+        <span class="input-group-addon"><i class="icon iconfont ">&#xe61b;</i></span>
+      </div>
+      <button type="button" class="btn btn-default">购物车（0）</button>
+    </div>
+    <div class="header-content">
+      <div class="content-left">
+        <a id="menuBtn" >
+          <i class="icon iconfont ">&#xe60d;</i>
+
+          全部商品分类
+          <i class="icon iconfont" >&#xe607;</i>
+        </a>
+        <a>企业服务</a>
+        <a>技术赋能</a>
+        <a>数字营销</a>
+        <div ref="menuList" class="menuList">
+          <ul>
+            <li>
+              <span>电子产品、文娱办公</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+            <li>
+              <span>家居电器</span>
+              <span>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              <a>手机通讯整机</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-right">
+        <span id="dropdownLink" class="dropdown-link">
+            <i class="icon iconfont" >&#xe616;</i>
+         我的账户
+        </span>
+        <ul id="userMenuList">
+          <li>个人信息</li>
+          <li>我的收藏</li>
+          <li>我的订单</li>
+          <li>退出登录</li>
+        </ul>
+      </div>
+    </div>
+    <!-- end -->
+    <div class="page">
+    <div class="page-content">
+      <ul class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li>我的账户</li>
+        <li class="active">我的信息</li>
+      </ul>
+      <div class="view-container">
+        <div class="menu">
+          <div class="menu-list">
+            <p class="title">我的账户</p>
+            <ul>
+              <li><a>信息维护</a></li>
+              <li><a>修改密码</a></li>
+              <li><a>账户信息</a></li>
+              <li><a>收货地址维护</a></li>
+              <li><a>我的收藏</a></li>
+              <li class="active"><a>我的订单</a></li>
+            </ul>
+          </div>
+          <div class="tips">
+            <p class="title">投诉热线</p>
+            <span class="content">
+              <p class="name">李士毅</p>
+              <p class="phone"><i class="iconfont icon-phone1x"></i>010-83528822-8615</p>
+            </span>
+          </div>
+        </div>
+        <div class="view">
+          <div class="page">
+            <div class="page-content">
+              <div class="title">
+                <span>我的订单</span>
+                <span class="search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="输入商品标题搜索订单">
+                    <i class="iconfont icon-search1x"></i>
+                  </div>
+                  <span>更多筛选条件<i class="iconfont icon-down_arrow1x"></i></span>
+                </span>
+              </div>
+              <div class="tabs">
+                <div class="tabs-header">
+                  <span class="active">全部订单</span>
+                  <span>代付款</span>
+                  <span>待收货</span>
+                  <span>已完成</span>
+                </div>
+                <div class="tabs-content">
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="commodity">
+                    <div class="header">
+                      <span class="left">
+                        <span class="type error">代付款</span>
+                        <span class="time">2020-04-15 12:00</span>
+                        <span class="code">订单编号： BC20041500001</span>
+                      </span>
+                      <span class="right">
+                        总金额 ¥ 68
+                      </span>
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <img src="../../../assets/image(15).png" alt="">
+                        </div>
+                        <div class="col-lg-5">
+                          <p class="name">无线蓝牙耳机</p>
+                          <p class="color">白色</p>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>1</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                        <div class="col-lg-2">
+                          <span>￥68</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <button class="btn">查看详情</button>
+                      <button class="btn">取消订单</button>
+                      <button class="btn btn-default">支付货款</button>
+                    </div>
+                  </div>
+                  <div class="page_1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+    <div class="footer-container">
+      <div class="footer-btn-content">
+        <div><img src="./assets/footer_icon_4.png" alt="">订购须知</div>
+        <div><img src="./assets/footer_icon_1.png" alt="">运输须知</div>
+        <div><img src="./assets/footer_icon_2.png" alt="">联系我们</div>
+        <div><img src="./assets/footer_icon_3.png" alt="">投诉建议</div>
+      </div>
+      <div class="footer-tips">
+        <div class="footer-tips-left">
+          <p>北京元隆雅图文化传播股份有限公司</p>
+          <p>电话：010-83528822</p>
+          <p>北京市西城区广安门内大街338号北京港中</p>
+        </div>
+        <div class="footer-tips-right">
+          <el-button type="primary" icon="el-icon-headset">人工客服</el-button>
+          <p>工作时间：9:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-msg">
+        <p>京ICP备13009990号-25&nbsp;资质公示&nbsp;|&nbsp;Copyright © 2015 Ylyato Company. All Rights Reserved. 元隆有品 版权所有</p>
+      </div>
+    </div>
+    <!-- end -->
+    <!-- jquery -->
+<script src="../../assets/js/jquery-1.12.4.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<!--再引入toPage.js-->
+<script src="../../assets/js/toPage.js"></script>
+<!--插件使用-->
+<script src="../../assets/js/index.js"></script>
+<script>
+    $(function(){
+        $("#menuBtn").click(function(e) {
+            $(".menuList").toggle();
+        });
+        $(".content-right").click(function(e) {
+            $("#userMenuList").toggle();
+        });
+    })
+</script>
+</body>
+
+</html>
